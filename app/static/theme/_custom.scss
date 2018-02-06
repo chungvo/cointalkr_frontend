@@ -1,0 +1,109 @@
+// Here you can add other styles
+button {
+    outline: none !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background-image: url(static/theme/img/arrow.svg) !important;
+    background-position-x: 98%;
+    background-position-y: 5px;
+    background-repeat: no-repeat;
+}
+.main {
+    z-index: 0;
+    margin-top: 55px;
+    padding: 30px;
+    .container-fluid {
+        padding: 0;
+    }
+    @media screen and (max-width: $break-larger) {
+        margin-top: 110px;
+    }
+}
+
+.main-table {
+    td {
+        line-height: 50px;
+    }
+}
+a {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: $break-medium) {
+    .main {
+        padding: 15px !important;
+    }
+}
+
+.header-fixed .app-body {
+    margin-top: 0px;
+}
+.aside-menu-fixed .aside-menu {
+    margin-top: 55px;
+}
+.DayPickerInput {
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    color: #3e515b;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border-radius: 0;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    .DayPickerInput-OverlayWrapper{
+        z-index: 1000;
+        .DayPicker-Weekday {
+            text-decoration: none;
+        }
+    }
+}
+.modal-header{
+    h4 {
+        width: 100%;
+    }
+}
+.autocomplete {
+    .rbt-input-wrapper {
+        float: left;
+    }
+    .rbt-aux {
+        float: right;
+        margin-top: 10px;
+    }
+    .dropdown-menu {
+        margin: -1px 0;
+        width: 100%;
+        .dropdown-item {
+            padding: 6px 10px;
+        }
+    }
+}
+.text-hover {
+    cursor: pointer;
+}
+
+.tracking-form {
+    & > div, .mb-4 {
+        margin: 0 !important;
+    }
+}
+
+.navbar-toggler {
+    button {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
