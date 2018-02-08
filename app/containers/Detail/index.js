@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { Line } from 'react-chartjs-2';
 import { compose } from 'redux';
@@ -17,13 +17,13 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectDetail from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
+// import messages from './messages';
 
 const MENU = {
   CHART: 'CHART',
   HISTORICAL_DATA: 'HICTORICAL DATA',
 };
-const randomNumber = () => Math.floor(Math.random() * 100);
+const randomNumber = (number) => Math.floor(Math.random() * number) + 10;
 
 export class Detail extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
@@ -39,10 +39,10 @@ export class Detail extends React.Component { // eslint-disable-line react/prefe
     for (let i = 0; i <= 30; i += 1) {
       arr.push({
         date: `Dec ${i + 1}, 2017`,
-        totalMention: randomNumber(),
-        positive: randomNumber(),
-        neutral: randomNumber(),
-        nagetive: randomNumber(),
+        totalMention: randomNumber(10),
+        positive: randomNumber(11),
+        neutral: randomNumber(12),
+        nagetive: randomNumber(11),
       });
     }
     setTimeout(() => {
@@ -53,10 +53,10 @@ export class Detail extends React.Component { // eslint-disable-line react/prefe
   }
 
   render() {
-    const generateDataList = () => {
+    const generateDataList = (number) => {
       const arr = [];
       for (let i = 0; i < 7; i += 1) {
-        arr.push(randomNumber());
+        arr.push(randomNumber(number));
       }
       return arr;
     };
@@ -75,28 +75,28 @@ export class Detail extends React.Component { // eslint-disable-line react/prefe
         {
           label: 'Positive',
           borderColor: chartColors.green,
-          data: generateDataList(),
+          data: generateDataList(5),
           fill: false,
           id: 'y-axis-0',
         },
         {
           label: 'Negative',
           borderColor: chartColors.red,
-          data: generateDataList(),
+          data: generateDataList(2),
           fill: false,
           id: 'y-axis-1',
         },
         {
           label: 'Neutral',
           borderColor: chartColors.grey,
-          data: generateDataList(),
+          data: generateDataList(3),
           fill: false,
           id: 'y-axis-2',
         },
         {
           label: 'BTC Price',
           borderColor: chartColors.yellow,
-          data: generateDataList(),
+          data: generateDataList(6),
           fill: false,
           id: 'y-axis-3',
         },
@@ -221,7 +221,7 @@ export class Detail extends React.Component { // eslint-disable-line react/prefe
             <nav aria-label="Page navigation example">
               <ul className="pagination justify-content-end">
                 <li className="page-item disabled">
-                  <a className="page-link" href="#" tabindex="-1">Previous</a>
+                  <a className="page-link" href="#">Previous</a>
                 </li>
                 <li className="page-item"><a className="page-link" href="#">1</a></li>
                 <li className="page-item"><a className="page-link" href="#">2</a></li>
